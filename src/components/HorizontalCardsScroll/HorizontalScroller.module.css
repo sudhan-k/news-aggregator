@@ -1,0 +1,193 @@
+.titleHeader{
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+}
+
+
+.horizontal-scroller {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Ensures cards align nicely */
+    gap: 16px;
+    padding: 16px;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+  
+  .horizontal-scroller::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+  }
+  
+  .card {
+    flex: 0 0 auto; /* Prevent cards from shrinking */
+    width: 400px; /* Default width for cards */
+    /* background: #f0f0f0; */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ededed;
+    /* border-color: color-mix(in srgb, color percentage, color percentage); */
+    padding: 5px;
+    text-align: center;
+    scroll-snap-align: start; /* Snap cards to the start */
+    transition: transform 0.5s ease;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    /* opacity: 0.5; */
+  }
+  /* .titleCard{
+    margin: 0;
+    padding: 0px 10px 10px 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    bottom: 92px;
+    background-color: #ededed;
+  } */
+
+  .loading {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: 340px; 
+    }
+  }
+  
+  /* @media (max-width: 480px) {
+    .card {
+      width: 150px;
+    }
+  } */
+  
+
+  .overlay {
+    position: relative;
+    bottom: 70%;
+    /* right: 10%; */
+    /* bottom: 0;
+    left: 0;
+    right: 0; */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+  }
+  
+  .card:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+  }
+  
+  .titleCard {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .description {
+    display: none; /* Hide description by default */
+    font-size: 1rem;
+    margin: 0.5rem 0 0;
+  }
+  
+  /* .card:hover .titleCard {
+    display: none; 
+  } */
+  
+  .card:hover .description {
+    display: block; /* Show description on hover */
+  }
+
+  .cardOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.295);
+    display: none;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    opacity: 0.5;
+    transition: opacity 0.8s ease;
+  }
+
+  .card:hover .cardOverlay {
+    opacity: 1;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.8s ease;
+  }
+  
+  .readMoreButton {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .readMoreButton:hover {
+    background: #000;
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  .descriptionCard {
+    font-size: 1rem;
+    margin: 0.5rem 0 0;
+    padding: 10px ;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.836);
+    color: #fff;
+  }
+
+
+  
+.scrollButton {
+  /* background-  color: #fff; */
+  border: 1px solid #ededed;
+  border-radius: 50%;
+  padding: 3px;
+  cursor: pointer;
+  margin: 0 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.icon {
+  font-size: 1.5rem !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.scrollButton:hover {
+  background-color: #bdbdbd;
+}
+
+
+.scrollButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
